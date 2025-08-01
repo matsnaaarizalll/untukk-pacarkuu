@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Untuk Kamu, My Girl 💖</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #ffe0f0, #ffddee);
+      font-family: 'Pacifico', cursive;
+      color: #ff4d6d;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      flex-direction: column;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    .wrapper {
+      background-color: #fff;
+      border-radius: 25px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      padding: 40px 30px;
+      max-width: 500px;
+      width: 90%;
+      position: relative;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+
+    .desc {
+      font-size: 1.1em;
+      margin-bottom: 20px;
+      color: #ff7b9c;
+    }
+
+    .image img {
+      width: 250px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .message {
+      font-size: 1em;
+      color: #d6336c;
+      line-height: 1.7;
+      margin-bottom: 30px;
+    }
+
+    .music {
+      background-color: #ffeaf3;
+      padding: 15px;
+      border-radius: 15px;
+      border: 2px dashed #ff99bb;
+      margin-bottom: 20px;
+    }
+
+    .gallery {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+
+    .gallery img {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .secret-btn {
+      background-color: #ff6fa1;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1em;
+      border-radius: 15px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .secret-btn:hover {
+      background-color: #ff4d6d;
+    }
+
+    .secret-message {
+      margin-top: 20px;
+      display: none;
+      background: #fff4fa;
+      padding: 15px;
+      border-radius: 15px;
+      border: 2px dashed #ffa1c9;
+      color: #c2185b;
+    }
+
+    .dark-mode {
+      background: #2a2a2a;
+      color: #ffe6f0;
+    }
+
+    .dark-mode .wrapper {
+      background-color: #3a3a3a;
+    }
+
+    .toggle-dark {
+      margin-top: 15px;
+      background-color: #ff9ecb;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .heart {
+      position: fixed;
+      top: -20px;
+      color: pink;
+      font-size: 20px;
+      animation: fall 5s linear infinite;
+      left: 50%;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(110vh);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <h1>💖 Hai Sayangku 💖</h1>
+    <p class="desc">Hari ini adalah hari spesiall buat pacarku. My girl yang selalu ada di dalam hatiku  🍓</p>
+
+    <div class="image">
+      <img src="IMG-20250801-WA0033.jpg" alt="Cute love gif">
+    </div>
+
+    <p class="message">
+      Kamu tau nggak? Kamu itu hadiah terbaik dari semesta buat aku. <br>
+      Makasih udah jadi cewek paling sabar, lucu, dan manis dan cantik banget. <br>
+      Aku sayanggggg kamu banget! 💗
+    </p>
+
+    <div class="music">
+      <audio controls autoplay loop>
+        <source src="Audio WhatsApp 2025-08-01 pukul 14.18.16_2243d5fb.mp3" type="audio/mpeg">
+        Browser kamu nggak bisa muter musik 😢
+      </audio>
+    </div>
+
+    <div class="gallery">
+      <img src="IMG-20250801-WA0034.jpg" alt="photo1">
+      <img src="IMG-20250712-WA0019.jpg" alt="photo2">
+      <img src="IMG-20250801-WA0032.jpg" alt="photo3">
+    </div>
+
+    <button class="secret-btn" onclick="toggleSecret()">Klik ya sayanggggg 💌</button>
+    <div class="secret-message" id="secretMessage">
+      Kalau kamu baca ini, berarti kamu emang spesial banget. <br>
+      Aku janji bakal terus jagain dan bahagiain kamu selamanya. 🥺❤️
+    </div>
+
+    <button class="toggle-dark" onclick="toggleDark()">🌙 Ganti Mode Gelap</button>
+  </div>
+
+  <script>
+    function toggleSecret() {
+      const msg = document.getElementById('secretMessage');
+      msg.style.display = msg.style.display === 'block' ? 'none' : 'block';
+    }
+
+    function toggleDark() {
+      document.body.classList.toggle('dark-mode');
+    }
+
+    // Hati jatuh
+    setInterval(() => {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.innerHTML = '💗';
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 5000);
+    }, 500);
+  </script>
+</body>
+</html>
